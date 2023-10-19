@@ -14,7 +14,7 @@ terraform {
 terraform {
   backend "azurerm"{
     use_oidc         = true
-    use_azuread_auth = true
+    # use_azuread_auth = true
     resource_group_name = "Devops"
     storage_account_name = "devopssri"
     container_name = "tfstatesri"
