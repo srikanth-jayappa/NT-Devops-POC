@@ -67,7 +67,7 @@ jobs:
           ARM_CLIENT_ID: ${{ secrets.CLIENT_ID }}
           ARM_SUBSCRIPTION_ID: ${{ secrets.SUBSCRIPTION_ID }}
           ARM_TENANT_ID: ${{ secrets.TENANT_ID }}
-        run: terraform -chdir=config plan -var="resource_group_name=${{ vars.RESOURCE_GROUP_NAME }}" -var="admin_password=${{ vars.ADMIN_PASSWORD }}" -var="admin_username=${{ vars.ADMIN_USERNAME }}" -var="size=${{ vars.SIZE }}" -var="sku=${{ vars.SKU }}" -var="storage_account_type=${{ vars.STORAGE_ACCOUNT_TYPE }}"
+        run: terraform -chdir=config plan # -var="resource_group_name=${{ vars.RESOURCE_GROUP_NAME }}" -var="admin_password=${{ vars.ADMIN_PASSWORD }}" -var="admin_username=${{ vars.ADMIN_USERNAME }}" -var="size=${{ vars.SIZE }}" -var="sku=${{ vars.SKU }}" -var="storage_account_type=${{ vars.STORAGE_ACCOUNT_TYPE }}"
 
 
 
