@@ -1,0 +1,32 @@
+{
+    "blob": "Y",
+    "adls": "Y",
+    "azureml": "N",
+    "sql_server": "Y",
+    "snowflake": "N",
+    "purview": "Y",
+    "synapse_spark": "Y",
+    "synapse_sql": "Y",
+    "databricks": "Y",
+    "azure_vm": "Y",
+    "synapse_spark_config": {
+        "node_size_family": "MemoryOptimized",
+        "node_size": "Medium",
+        "spark_version": "3.3"
+    },
+    "databricks_config": {
+        "node_type": "Driver node",
+        "cluster_mode": "Standard",
+        "spark_version": "3.1",
+        "node_auto_termination": "60"
+    },
+    "azure_vm_config":{
+        "resource_group_name": "Devops",
+        "admin_password": "Winner007!",
+        "admin_username": "madmax1",
+        "size": "Standard_D2s_v3",
+        "sku": "18.04-LTS",
+        "storage_account_type": "Standard_LRS"
+    }
+
+}
