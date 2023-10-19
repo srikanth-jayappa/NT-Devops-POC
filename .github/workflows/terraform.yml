@@ -57,18 +57,16 @@ jobs:
 
       - name: Terraform Init
         env:
-          ARM_CLIENT_ID: ${{secrets.CLIENT_ID}}
-          ARM_CLIENT_SCRETE: ${{secrets.CLIENT_SECRET}}
-          ARM_SUBSCRIPTION_ID: ${{secrets.SUBSCRIPTION_ID}}
-          ARM_TENENT_ID: ${{secrets.TENANT_ID}}
+          ARM_CLIENT_ID: ${{ secrets.CLIENT_ID }}
+          ARM_SUBSCRIPTION_ID: ${{ secrets.SUBSCRIPTION_ID }}
+          ARM_TENANT_ID: ${{ secrets.TENANT_ID }}
         run: terraform -chdir=./config init
       
       - name: Terraform plan
         env:
-          ARM_CLIENT_ID: ${{secrets.CLIENT_ID}}
-          ARM_CLIENT_SCRETE: ${{secrets.CLIENT_SECRET}}
-          ARM_SUBSCRIPTION_ID: ${{secrets.SUBSCRIPTION_ID}}
-          ARM_TENENT_ID: ${{secrets.TENANT_ID}}
+          ARM_CLIENT_ID: ${{ secrets.CLIENT_ID }}
+          ARM_SUBSCRIPTION_ID: ${{ secrets.SUBSCRIPTION_ID }}
+          ARM_TENANT_ID: ${{ secrets.TENANT_ID }}
         run: terraform -chdir=config plan -var="resource_group_name=${{ env.RESOURCE_GROUP_NAME }}" -var="admin_password=${{ env.ADMIN_PASSWORD }}" -var="admin_username=${{ env.ADMIN_USERNAME }}" -var="size=env.SIZE" -var="sku=${{ env.SKU }}" -var="storage_account_type=${{ env.STORAGE_ACCOUNT_TYPE }}"
 
 
