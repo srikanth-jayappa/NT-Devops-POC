@@ -38,30 +38,40 @@ size=$(jq -r '.azure_vm_config.size' "$json_file")
 sku=$(jq -r '.azure_vm_config.sku' "$json_file")
 storage_account_type=$(jq -r '.azure_vm_config.storage_account_type' "$json_file")
 
+# # Echo the extracted key-value pairs
+# echo "::set-output name=BLOB::$blob"
+# echo "::set-output name=ADLS::$adls"
+# echo "::set-output name=AZUREML::$azureml"
+# echo "::set-output name=SQL_SERVE::$sql_server"
+# echo "::set-output name=SNOWFLAKE::$snowflake"
+# echo "::set-output name=PURVIEW::$purview"
+# echo "::set-output name=SYNAPSE_SPARK::$synapse_spark"
+# echo "::set-output name=SYNAPSE_SQL::$synapse_sql"
+# echo "::set-output name=DATABRICKS::$databricks"
+
+
+# # Echo the extracted sub-section key-value pairs individually
+# echo "::set-output name=NODE_SIZE_FAMILY::$node_size_family"
+# echo "::set-output name=NODE_SIZE::$node_size"
+# echo "::set-output name=SPARK_VERSION::$spark_version"
+# echo "::set-output name=NODE_TYPE::$node_type"
+# echo "::set-output name=CLUSTER_MODE::$cluster_mode"
+# echo "::set-output name=SPARK_VERSION::$spark_version"
+# echo "::set-output name=NODE_AUTO_TERMINATION::$node_auto_termination"
+# echo "::set-output name=RESOURCE_GROUP_NAME::$resource_group_name"
+# echo "::set-output name=ADMIN_PASSWORD::$admin_password"
+# echo "::set-output name=ADMIN_USERNAME::$admin_username"
+# echo "::set-output name=SIZE::$size"
+# echo "::set-output name=SKU=$sku"
+# echo "::set-output name=STORAGE_ACCOUNT_TYPE::$storage_account_type"
+
 # Echo the extracted key-value pairs
-echo "::set-output name=BLOB::$blob"
-echo "::set-output name=ADLS::$adls"
-echo "::set-output name=AZUREML::$azureml"
-echo "::set-output name=SQL_SERVE::$sql_server"
-echo "::set-output name=SNOWFLAKE::$snowflake"
-echo "::set-output name=PURVIEW::$purview"
-echo "::set-output name=SYNAPSE_SPARK::$synapse_spark"
-echo "::set-output name=SYNAPSE_SQL::$synapse_sql"
-echo "::set-output name=DATABRICKS::$databricks"
-
-
-# Echo the extracted sub-section key-value pairs individually
-echo "::set-output name=NODE_SIZE_FAMILY::$node_size_family"
-echo "::set-output name=NODE_SIZE::$node_size"
-echo "::set-output name=SPARK_VERSION::$spark_version"
-echo "::set-output name=NODE_TYPE::$node_type"
-echo "::set-output name=CLUSTER_MODE::$cluster_mode"
-echo "::set-output name=SPARK_VERSION::$spark_version"
-echo "::set-output name=NODE_AUTO_TERMINATION::$node_auto_termination"
-echo "::set-output name=RESOURCE_GROUP_NAME::$resource_group_name"
-echo "::set-output name=ADMIN_PASSWORD::$admin_password"
-echo "::set-output name=ADMIN_USERNAME::$admin_username"
-echo "::set-output name=SIZE::$size"
-echo "::set-output name=SKU=$sku"
-echo "::set-output name=STORAGE_ACCOUNT_TYPE::$storage_account_type
-
+echo "{BLOB}={$blob}" >> $GITHUB_OUTPUT
+echo "{ADLS}={$adls}" >> $GITHUB_OUTPUT
+echo "{AZUREML}={$azureml}" >> $GITHUB_OUTPUT
+echo "{SQL_SERVE}={$sql_server}" >> $GITHUB_OUTPUT
+echo "{SNOWFLAKE}={$snowflake}" >> $GITHUB_OUTPUT
+echo "{PURVIEW}={$purview}" >> $GITHUB_OUTPUT
+echo "{SYNAPSE_SPARK}={$synapse_spark}" >> $GITHUB_OUTPUT
+echo "{SYNAPSE_SQL}={$synapse_sql}" >> $GITHUB_OUTPUT
+echo "{DATABRICKS}={$databricks}" >> $GITHUB_OUTPUT
