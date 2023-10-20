@@ -31,12 +31,10 @@ jobs:
         run: sudo apt-get update -y && sudo apt-get install jq -y
       
       - name: Parse JSON
-      - id: shell
+        id: shell
         run: | 
           chmod +x sample.sh | ./sample.sh
-
-
-
+          echo "${{ steps.shell.outputs.BLOB }}"
                       
       
       # - name: 'Az CLI login'
