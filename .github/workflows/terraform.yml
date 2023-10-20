@@ -33,7 +33,7 @@ jobs:
       - id: shell
         run: chmod +x sample.sh | ./sample.sh
         
-      - run: echo "${{needs.steps.shell.outputs.BLOB }}"         
+        run: echo "${{needs.steps.shell.outputs.BLOB }}"         
       
       # - name: 'Az CLI login'
       #   # run: az login
