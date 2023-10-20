@@ -31,8 +31,8 @@ jobs:
       
       - name: Parse JSON
       - id: shell
-        run: chmod +x sample.sh | ./sample.sh
-             echo "${{needs.steps.shell.outputs.BLOB }}"         
+        run: chmod +x sample.sh | ./sample.sh | echo "${{needs.steps.shell.outputs.BLOB }}"
+                      
       
       # - name: 'Az CLI login'
       #   # run: az login
