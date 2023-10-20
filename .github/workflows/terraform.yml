@@ -66,15 +66,9 @@ jobs:
         env:
           ARM_CLIENT_ID: ${{ secrets.CLIENT_ID }}
           ARM_SUBSCRIPTION_ID: ${{ secrets.SUBSCRIPTION_ID }}
-          ARM_TENANT_ID: ${{ secrets.TENANT_ID }}
-          resource_group_name: 
-          admin_password:
-          admin_username:
-          size:
-          sku:
-          storage_account_type: 
+          ARM_TENANT_ID: ${{ secrets.TENANT_ID }} 
         # run: terraform -chdir=config plan -var="resource_group_name=${{ vars.RESOURCE_GROUP_NAME }}" -var="admin_password=${{ vars.ADMIN_PASSWORD }}" -var="admin_username=${{ vars.ADMIN_USERNAME }}" -var="size=${{ vars.SIZE }}" -var="sku=${{ vars.SKU }}" -var="storage_account_type=${{ vars.STORAGE_ACCOUNT_TYPE }}"
-        run: terraform -chdir=config plan -var="resource_group_name=${{ env.resource_group_name }}" -var="admin_password=${{ env.admin_password }}" -var="admin_username=${{ env.admin_username }}" -var="size=${{ env.size }}" -var="sku=${{ env.sku }}" -var="storage_account_type=${{ env.storage_account_type }}"
+        run: terraform -chdir=config plan -var="resource_group_name=$RESOURCE_GROUP_NAME" -var="admin_password=$ADMIN_PASSWORD" -var="admin_username=$ADMIN_USERNAME" -var="size=$SIZE" -var="sku=$SKU" -var="storage_account_type=$STORAGE_ACCOUNT_TYPE"
 
 
 
