@@ -34,34 +34,34 @@ jobs:
       - id: shell
         run: | 
           chmod +x sample.sh | ./sample.sh
-          echo "${{ steps.shell.outputs.BLOB }}"
+
 
 
                       
       
-      - name: 'Az CLI login'
-        # run: az login
-        uses: azure/login@v1
-        with:
-          client-id: ${{ secrets.CLIENT_ID }}
-          tenant-id: ${{ secrets.TENANT_ID }}
-          subscription-id: ${{ secrets.SUBSCRIPTION_ID }}
+      # - name: 'Az CLI login'
+      #   # run: az login
+      #   uses: azure/login@v1
+      #   with:
+      #     client-id: ${{ secrets.CLIENT_ID }}
+      #     tenant-id: ${{ secrets.TENANT_ID }}
+      #     subscription-id: ${{ secrets.SUBSCRIPTION_ID }}
 
-      - name: Terraform Init
-        env:
-          ARM_CLIENT_ID: ${{ secrets.CLIENT_ID }}
-          ARM_SUBSCRIPTION_ID: ${{ secrets.SUBSCRIPTION_ID }}
-          ARM_TENANT_ID: ${{ secrets.TENANT_ID }}
-        run: terraform -chdir=./config init
+      # - name: Terraform Init
+      #   env:
+      #     ARM_CLIENT_ID: ${{ secrets.CLIENT_ID }}
+      #     ARM_SUBSCRIPTION_ID: ${{ secrets.SUBSCRIPTION_ID }}
+      #     ARM_TENANT_ID: ${{ secrets.TENANT_ID }}
+      #   run: terraform -chdir=./config init
       
-      - name: Terraform plan
-        env:
-          ARM_CLIENT_ID: ${{ secrets.CLIENT_ID }}
-          ARM_SUBSCRIPTION_ID: ${{ secrets.SUBSCRIPTION_ID }}
-          ARM_TENANT_ID: ${{ secrets.TENANT_ID }} 
-        # run: terraform -chdir=config plan -var="resource_group_name=${{ vars.RESOURCE_GROUP_NAME }}" -var="admin_password=${{ vars.ADMIN_PASSWORD }}" -var="admin_username=${{ vars.ADMIN_USERNAME }}" -var="size=${{ vars.SIZE }}" -var="sku=${{ vars.SKU }}" -var="storage_account_type=${{ vars.STORAGE_ACCOUNT_TYPE }}"
-        # run: terraform -chdir=config plan -var="resource_group_name=$RESOURCE_GROUP_NAME" -var="admin_password=$ADMIN_PASSWORD" -var="admin_username=$ADMIN_USERNAME" -var="size=$SIZE" -var="sku=$SKU" -var="storage_account_type=$STORAGE_ACCOUNT_TYPE"
-        # run: terraform -chdir=config plan -var="resource_group_name=${{ env.RESOURCE_GROUP_NAME }}" -var="admin_password=$admin_password" -var="admin_username=$admin_username" -var="size=$size" -var="sku=$sku" -var="storage_account_type=$storage_account_type"
+      # - name: Terraform plan
+      #   env:
+      #     ARM_CLIENT_ID: ${{ secrets.CLIENT_ID }}
+      #     ARM_SUBSCRIPTION_ID: ${{ secrets.SUBSCRIPTION_ID }}
+      #     ARM_TENANT_ID: ${{ secrets.TENANT_ID }} 
+      #   # run: terraform -chdir=config plan -var="resource_group_name=${{ vars.RESOURCE_GROUP_NAME }}" -var="admin_password=${{ vars.ADMIN_PASSWORD }}" -var="admin_username=${{ vars.ADMIN_USERNAME }}" -var="size=${{ vars.SIZE }}" -var="sku=${{ vars.SKU }}" -var="storage_account_type=${{ vars.STORAGE_ACCOUNT_TYPE }}"
+      #   # run: terraform -chdir=config plan -var="resource_group_name=$RESOURCE_GROUP_NAME" -var="admin_password=$ADMIN_PASSWORD" -var="admin_username=$ADMIN_USERNAME" -var="size=$SIZE" -var="sku=$SKU" -var="storage_account_type=$STORAGE_ACCOUNT_TYPE"
+      #   # run: terraform -chdir=config plan -var="resource_group_name=${{ env.RESOURCE_GROUP_NAME }}" -var="admin_password=$admin_password" -var="admin_username=$admin_username" -var="size=$size" -var="sku=$sku" -var="storage_account_type=$storage_account_type"
 
 
         
