@@ -66,12 +66,12 @@ storage_account_type=$(jq -r '.azure_vm_config.storage_account_type' "$json_file
 # echo "::set-output name=STORAGE_ACCOUNT_TYPE::$storage_account_type"
 
 # Echo the extracted key-value pairs
-echo "{BLOB}={$blob}" >> $GITHUB_OUTPUT
-echo "{ADLS}={$adls}" >> $GITHUB_OUTPUT
-echo "{AZUREML}={$azureml}" >> $GITHUB_OUTPUT
-echo "{SQL_SERVE}={$sql_server}" >> $GITHUB_OUTPUT
-echo "{SNOWFLAKE}={$snowflake}" >> $GITHUB_OUTPUT
-echo "{PURVIEW}={$purview}" >> $GITHUB_OUTPUT
-echo "{SYNAPSE_SPARK}={$synapse_spark}" >> $GITHUB_OUTPUT
-echo "{SYNAPSE_SQL}={$synapse_sql}" >> $GITHUB_OUTPUT
-echo "{DATABRICKS}={$databricks}" >> $GITHUB_OUTPUT
+echo "BLOB=$blob" >> $GITHUB_OUTPUT
+echo "ADLS=$adls" >> $GITHUB_OUTPUT
+# echo "{AZUREML}={$azureml}" >> $GITHUB_OUTPUT
+# echo "{SQL_SERVE}={$sql_server}" >> $GITHUB_OUTPUT
+# echo "{SNOWFLAKE}={$snowflake}" >> $GITHUB_OUTPUT
+# echo "{PURVIEW}={$purview}" >> $GITHUB_OUTPUT
+# echo "{SYNAPSE_SPARK}={$synapse_spark}" >> $GITHUB_OUTPUT
+# echo "{SYNAPSE_SQL}={$synapse_sql}" >> $GITHUB_OUTPUT
+# echo "{DATABRICKS}={$databricks}" >> $GITHUB_OUTPUT
